@@ -217,34 +217,30 @@
             <div class="row">
                  <div class="col-md-3 col-sm-6 vd">
                     <div class="bkjiu">
-                     <img src="assets/images/gallery/g1.jpg" alt="">
+                     <img src="assets/images/gallery/registration.jpg" alt="">
                      <h4><b>1 - </b>Registration</h4>
-                     <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
-                     <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                     <p>You need to complete a very simple registration form which contains all required contact information needed to begin the donation process</p>
                      </div>
                  </div>
                  <div class="col-md-3 col-sm-6 vd">
                     <div class="bkjiu">
-                     <img src="assets/images/gallery/g2.jpg" alt="">
-                        <h4><b>2 - </b>Seeing</h4>
-                     <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
-                     <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                     <img src="assets/images/gallery/screening.jpg" alt="">
+                        <h4><b>2 - </b>Screening</h4>
+                     <p>A drop of blood from your finger will be taken for a simple test to ensure that your blood iron levels are suitable for donating blood</p>
                      </div>
                  </div>
                  <div class="col-md-3 col-sm-6 vd">
                     <div class="bkjiu">
-                     <img src="assets/images/gallery/g3.jpg" alt="">
+                     <img src="assets/images/gallery/Donation.jpg" alt="">
                         <h4><b>3 - </b>Donation</h4>
-                     <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
-                     <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                     <p>After passing the screening test successfully, you will be directed to a donor bed for donation. This takes between 6-10 minutes only</p>
                      </div>
                  </div>
                  <div class="col-md-3 col-sm-6 vd">
                     <div class="bkjiu">
-                        <img src="assets/images/gallery/g4.jpg" alt="">
+                        <img src="assets/images/gallery/Safe life.jpg" alt="">
                         <h4><b>4 - </b>Save Life</h4>
-                         <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
-                         <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
+                         <p>Your blood saves lives. Your blood donation is an amazing gift to people who need it in an emergency or for on-going medical treatment. </p>
                     </div> 
                  </div>
             </div>

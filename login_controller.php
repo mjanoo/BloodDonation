@@ -20,9 +20,11 @@ if (isset($_POST["btn_login"])) {
 
         header("location:home.php");
     } else{
-echo "error";
+        $error= 'Email Already exists. Please try another Email.';
+        header( "location:login.php?error=".$error );
     }
 }
+
 
 
 

@@ -63,9 +63,6 @@
                                 </li>
                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php#blog">Blog</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="btn btn-success   bounceInUp" href="register.php" role="button" > Become a Donor</a>
                                 </li>
                                 <li class="nav-item">
