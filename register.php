@@ -63,9 +63,6 @@
                                 </li>
                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.php#blog">Blog</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="btn btn-success   bounceInUp" href="register.php" role="button" > Become a Donor</a>
                                 </li>
                                 <li class="nav-item">
@@ -80,7 +77,7 @@
     </div>
 </header>
 
-<div class="row justify-content-center" style="margin-top: 30px;">
+<div class="row justify-content-center" style="margin-top: 4px;">
     <div class="col-lg-4 col-md-5 col-sm-6 col-xs-7 mb-5">
         <div class="card rounded">
             <ul class="nav nav-tabs justify-content-center bg-light" style="padding: 20px">

@@ -18,7 +18,7 @@ if (isset($_POST["btn_hlogin"])) {
         echo "Wrong email or password. Please try again.";        
     }else{   
         $row=mysqli_fetch_array($result);
-        $_SESSION["email"] = $h_email;
+        $_SESSION["email"] = $email;
        header("location:hospital_home.php");
     } 
 }

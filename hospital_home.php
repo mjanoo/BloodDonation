@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION["email"])){
     $session_email = $_SESSION["email"];
-} 
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -90,7 +90,7 @@ if(isset($_SESSION["email"])){
         </div>
         
         <table class="table table-responsive table-striped rounded mb-5">
-                <tr><th colspan="7" class="title">Donors</th></tr>
+        <tr><th colspan="7" class="title">Donoting Blood Samples</th></tr>
                 <tr>
                     <th>#</th>
                     <th>Donor Name</th>
@@ -121,8 +121,7 @@ if(isset($_SESSION["email"])){
 
                 <tr>
                     
-                    <td><?php echo ++$count;?></td>
-                    
+                     <td><?php echo ++$counter;?></td>                    
                     <td><?php echo ($row['name']); ?></td>
                     <td><?php echo ($row['bloodgroup']); ?></td>
                     <td><?php echo ($row['county']); ?></td>
