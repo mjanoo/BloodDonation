@@ -60,7 +60,7 @@ if(isset($_SESSION["email"])){
             </div>
         </header>
         
-<table class="table table-danger table-striped">
+<table class="table table-danger table-striped" style="width: 30px; height:30px;">
     <tr>
         <th>#</th>
         <th>Name</th>
@@ -86,6 +86,7 @@ if(isset($_SESSION["email"])){
         $location = $row['location'];
         $pnumber = $row['pnumber'];
 
+       
         echo "<tr>
              <td>$id</td>
              <td>$name</td>

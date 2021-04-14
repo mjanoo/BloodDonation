@@ -2,10 +2,7 @@
 session_start();
 if(isset($_SESSION["email"])){
     $session_email = $_SESSION["email"];
-} else{
-    session_destroy();
-    header("location:index.php");
-}
+} 
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,6 +10,17 @@ if(isset($_SESSION["email"])){
  <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Blood Donation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../library/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="../library/js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/jpeg" href="image/favicon.jpg">
+
     <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/fav.jpg">
@@ -60,45 +68,73 @@ if(isset($_SESSION["email"])){
                 </div>
             </div>
         </header>
+<div class="container">
+
+        <div class="row col-lg-8 col-md-8 col-sm-12 mb-3">
+            <form method="get" action="" style="margin-top:-20px; ">
+                <label class="font-weight-bolder">Select Blood Group:</label>
+                <select name="search" class="form-control">
+                <option><?php echo @$_GET['search']; ?></option>
+                <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select><br>
+                <a href="deleteit.php" class="btn btn-info mr-4"> Reset</a>
+                <input type="submit" name="submit" class="btn btn-info" value="search">
+            </form>
+        </div>
         
-<table class="table table-striped table-hover">
-    <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Blood Group</th>
-        <th>County</th>
-        <th>Location</th>
-        <th>Contact</th>
+        <table class="table table-responsive table-striped rounded mb-5">
+                <tr><th colspan="7" class="title">Donors</th></tr>
+                <tr>
+                    <th>#</th>
+                    <th>Donor Name</th>
+                    <th>Blood Group</th>
+                    <th>County</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+                    <th>Action</th>
+                </tr>
 
-    </tr>
-    <?php
-    require_once 'connection.php';
+                <div>
+                    <?php
+                    require_once 'connection.php';
 
-    //Prepare select query
-    $select_products = "SELECT * FROM `users`";
-    //Execute the products select query
-    $products = mysqli_query($conn, $select_products);
+                    //Prepare select query
+                    $result = "SELECT * FROM `users`";
+                    //Execute the products select query
+                    $products = mysqli_query($conn, $result);
 
-    while ($row = mysqli_fetch_assoc($products)){
-        $id = $row['id'];
-        $name = $row['name'];
-        $bloodgroup = $row['bloodgroup'];
-        $county = $row['county'];
-        $location = $row['location'];
-        $pnumber = $row['pnumber'];
+                    if ($result) {
+                        $row =mysqli_num_rows( $products);
+                        if ($row) { //echo "<b> Total ".$row." </b>";
+                    }else echo '<b style="color:white;background-color:red;padding:7px;border-radius: 15px 50px;">Nothing to show.</b>';
+                }
+                ?>
+                </div>
+                <?php while($row = mysqli_fetch_array($products)) { ?>
 
-        echo "<tr>
-             <td>$id</td>
-             <td>$name</td>
-             <td>$bloodgroup</td>
-             <td>$county</td>
-             <td>$location</td>
-             <td>$pnumber</td>
-             
-             </tr>";
-            }
-    ?>
-</table>
+                <tr>
+                    
+                    <td><?php echo ++$count;?></td>
+                    
+                    <td><?php echo ($row['name']); ?></td>
+                    <td><?php echo ($row['bloodgroup']); ?></td>
+                    <td><?php echo ($row['county']); ?></td>
+                    <td><?php echo ($row['location']); ?></td>
+                    <td><?php echo ($row['pnumber']); ?></td>
+                </tr>
+                <?php } ?>
+    
+        </table>
+
+</div>
+
 
 </body>
 </html>

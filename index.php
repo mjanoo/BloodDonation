@@ -219,7 +219,7 @@
                     <div class="bkjiu">
                      <img src="assets/images/gallery/g1.jpg" alt="">
                      <h4><b>1 - </b>Registration</h4>
-                     <p>Ut wisi enim ad minim veniam, quis laore nostrud exerci tation ulm hedi corper turet suscipit lobortis</p>
+                     <p>Thanks for becoming a donor. Register into your account, key in your correct details and wait for a call. Don’t worry, it’s quick and easy!</p>
                      <button class="btn btn-sm btn-danger">Readmore <i class="fas fa-arrow-right"></i></button>
                      </div>
                  </div>
