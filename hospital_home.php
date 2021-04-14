@@ -11,16 +11,6 @@ if(isset($_SESSION["email"])){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Blood Donation</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../library/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="../library/js/jquery-3.2.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link href="css/style.css" rel="stylesheet"/>
-    <link rel="shortcut icon" type="image/jpeg" href="image/favicon.jpg">
-
     <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/images/fav.jpg">
@@ -28,6 +18,13 @@ if(isset($_SESSION["email"])){
     <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
     <link rel="stylesheet" href="assets/plugins/grid-gallery/css/grid-gallery.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+
+    
 </head>
 <body>
 	 <header class="continer-fluid ">
@@ -52,14 +49,10 @@ if(isset($_SESSION["email"])){
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav">
-                                         <li class="nav-item">
-                                             <a class="btn btn-success  " href="profile.php" role="button" >My Profile</a>
-                                         </li> 
+                                         
                                         <li class="nav-item">
                                              <a class="btn btn-success  " href="logout.php" role="button" > Logout</a>
-                                         </li>                          
-
-                                        
+                                         </li> 
                                     </ul>
                                 </div>
                             </nav>
@@ -71,7 +64,7 @@ if(isset($_SESSION["email"])){
 <div class="container">
 
         <div class="row col-lg-8 col-md-8 col-sm-12 mb-3">
-            <form method="get" action="" style="margin-top:-20px; ">
+            <form method="get" action="" style="margin-top:10px; ">
                 <label class="font-weight-bolder">Select Blood Group:</label>
                 <select name="search" class="form-control">
                 <option><?php echo @$_GET['search']; ?></option>
@@ -84,23 +77,23 @@ if(isset($_SESSION["email"])){
                     <option value="O+">O+</option>
                     <option value="O-">O-</option>
                 </select><br>
-                <a href="deleteit.php" class="btn btn-info mr-4"> Reset</a>
+                <a href="#" class="btn btn-info mr-4"> Reset</a>
                 <input type="submit" name="submit" class="btn btn-info" value="search">
             </form>
         </div>
         
-        <table class="table table-responsive table-striped rounded mb-5">
-        <tr><th colspan="7" class="title">Donoting Blood Samples</th></tr>
-                <tr>
+        <table class="table text-center table-bordered table-responsive table-striped" >
+            <th colspan="8" class="title">Blood Donors</th>
+                <tr>                    
                     <th>#</th>
                     <th>Donor Name</th>
                     <th>Blood Group</th>
                     <th>County</th>
                     <th>Location</th>
+                    <th>Email</th>
                     <th>Contact</th>
-                    <th>Action</th>
+                    <th>Action</th>                    
                 </tr>
-
                 <div>
                     <?php
                     require_once 'connection.php';
@@ -117,23 +110,20 @@ if(isset($_SESSION["email"])){
                 }
                 ?>
                 </div>
-                <?php while($row = mysqli_fetch_array($products)) { ?>
+                <?php $count =0; while($row = mysqli_fetch_array($products)) { ?>
 
-                <tr>
-                    
-                     <td><?php echo ++$counter;?></td>                    
+                <tr>                    
+                    <td><?php echo ++$count; ?></td>
                     <td><?php echo ($row['name']); ?></td>
                     <td><?php echo ($row['bloodgroup']); ?></td>
                     <td><?php echo ($row['county']); ?></td>
                     <td><?php echo ($row['location']); ?></td>
+                    <td><?php echo ($row['email']); ?></td>
                     <td><?php echo ($row['pnumber']); ?></td>
+                    <td><input type="#" name="request" class="btn btn-info btn-sm" value="Request"></td>
                 </tr>
-                <?php } ?>
-    
+                <?php } ?>    
         </table>
-
 </div>
-
-
 </body>
 </html>

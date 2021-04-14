@@ -44,9 +44,12 @@ if(isset($_SESSION["email"])){
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                            <a class="nav-link" href="home.php">Dashboard</a>
+                                        </li>
                                       <li class="nav-item">
                                              <a class="btn btn-success  " href="profile.php" role="button" >My Profile</a>
-                                         </li> 
+                                      </li> 
                                         <li class="nav-item">
                                              <a class="btn btn-success  " href="logout.php" role="button" > Logout</a>
                                          </li>                                       
@@ -60,7 +63,8 @@ if(isset($_SESSION["email"])){
             </div>
         </header>
         
-<table class="table table-danger table-striped" style="width: 30px; height:30px;">
+<div class="container" style="margin-top: 50px;">
+<table class="table text-center table-bordered table-striped">
     <tr>
         <th>#</th>
         <th>Name</th>
@@ -68,6 +72,8 @@ if(isset($_SESSION["email"])){
         <th>County</th>
         <th>Location</th>
         <th>Contact</th>
+        <th colspan=2 >Actions</th>
+
 
     </tr>
     <?php
@@ -93,14 +99,13 @@ if(isset($_SESSION["email"])){
              <td>$bloodgroup</td>
              <td>$county</td>
              <td>$location</td>
-             <td>$pnumber</td>
-             <td><a href='delete.php?my_id=$id'>Delete</a> </td>
+             <td>$pnumber</td>             
              <td><a href='update.php?my_id=$id&my_name=$name&my_county=$county&my_location=$location&my_pnumber=$pnumber'>Update</a> </td>
-             
+             <td><a class='btn btn-danger' href='delete.php?my_id=$id'role=button>Delete</a></td>
              </tr>";
             }
     ?>
 </table>
-
+</div>
 </body>
 </html>

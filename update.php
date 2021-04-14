@@ -53,6 +53,9 @@ if(isset($_GET["my_id"])){
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                            <a class="nav-link" href="home.php">Dashboard</a>
+                                        </li>
                                       <li class="nav-item">
                                              <a class="btn btn-success  " href="profile.php" role="button" >My Profile</a>
                                          </li> 
@@ -73,10 +76,10 @@ if(isset($_GET["my_id"])){
     <form action="update_controller.php" method="post" style="border-radius:3px; margin-top:50px; padding: 15px; box-shadow: 0px 0px 2px;">
         <h1>Update Profile</h1>
         <input type="hidden"  name="id" value="<?php echo $received_id; ?>">
-        <input type="text"  class="form-control" placeholder="update my_name" name="name" value="<?php echo $received_name;?>" readonly> <br><br>
-        <input type="text" class="form-control" placeholder="update my_county" name="county" value="<?php echo $received_county;?>"> <br><br>
-        <input type="text" class="form-control" placeholder="update my_location" name="location" value="<?php echo $received_location; ?>"> <br><br>
-        <input type="text" class="form-control" placeholder="update my_pnumber" name="pnumber" value="<?php echo $received_pnumber; ?>"> <br><br>
+        <input type="text"  class="form-control" placeholder="update my_name" name="name" value="<?php echo $received_name;?>" readonly> <br>
+        <input type="text" class="form-control" placeholder="update my_county" name="county" value="<?php echo $received_county;?>"> <br>
+        <input type="text" class="form-control" placeholder="update my_location" name="location" value="<?php echo $received_location; ?>"> <br>
+        <input type="text" class="form-control" placeholder="update my_pnumber" name="pnumber" value="<?php echo $received_pnumber; ?>"> <br>
         <input type="submit" value="update" class="btn-primary btn-block" name="btn_update">
 
     </form>
